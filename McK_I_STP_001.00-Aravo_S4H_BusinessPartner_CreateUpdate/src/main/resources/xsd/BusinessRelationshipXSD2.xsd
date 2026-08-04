@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8 svn-revision#13980. --><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://sim.aravo.com/datamodel/2013/01/domainobjects" xmlns:ns2="http://sim.aravo.com/datamodel/2013/01/attributes" xmlns:ns3="http://sim.aravo.com/datamodel/2012/08/lists" xmlns:ns4="http://sim.aravo.com/datamodel/2013/01/links" xmlns:tns="http://sim.aravo.com/soapservices/v4_2/BusinessRelationshipService" targetNamespace="http://sim.aravo.com/soapservices/v4_2/BusinessRelationshipService" version="1.0">
+
+<xs:import namespace="http://sim.aravo.com/datamodel/2013/01/domainobjects" schemaLocation="BusinessRelationshipXSD4.xsd"/>
+
+<xs:import namespace="http://sim.aravo.com/datamodel/2013/01/attributes" schemaLocation="BusinessRelationshipXSD5.xsd"/>
+
+<xs:import namespace="http://sim.aravo.com/datamodel/2012/08/lists" schemaLocation="BusinessRelationshipXSD6.xsd"/>
+
+<xs:import namespace="http://sim.aravo.com/datamodel/2013/01/links" schemaLocation="BusinessRelationshipXSD3.xsd"/>
+
+<xs:element name="createBusinessRelationships" type="tns:createBusinessRelationships"/>
+
+<xs:element name="createBusinessRelationshipsResponse" type="tns:createBusinessRelationshipsResponse"/>
+
+<xs:element name="deactivateBusinessRelationships" type="tns:deactivateBusinessRelationships"/>
+
+<xs:element name="deactivateBusinessRelationshipsResponse" type="tns:deactivateBusinessRelationshipsResponse"/>
+
+<xs:element name="findBusinessRelationshipAuditRecords" type="tns:findBusinessRelationshipAuditRecords"/>
+
+<xs:element name="findBusinessRelationshipAuditRecordsResponse" type="tns:findBusinessRelationshipAuditRecordsResponse"/>
+
+<xs:element name="getBusinessRelationships" type="tns:getBusinessRelationships"/>
+
+<xs:element name="getBusinessRelationships2" type="tns:getBusinessRelationships2"/>
+
+<xs:element name="getBusinessRelationships2Response" type="tns:getBusinessRelationships2Response"/>
+
+<xs:element name="getBusinessRelationshipsResponse" type="tns:getBusinessRelationshipsResponse"/>
+
+<xs:element name="getFields" type="tns:getFields"/>
+
+<xs:element name="getFieldsResponse" type="tns:getFieldsResponse"/>
+
+<xs:element name="getSubtypes" type="tns:getSubtypes"/>
+
+<xs:element name="getSubtypesResponse" type="tns:getSubtypesResponse"/>
+
+<xs:element name="updateBusinessRelationships" type="tns:updateBusinessRelationships"/>
+
+<xs:element name="updateBusinessRelationshipsResponse" type="tns:updateBusinessRelationshipsResponse"/>
+
+<xs:element name="upsertBusinessRelationships" type="tns:upsertBusinessRelationships"/>
+
+<xs:element name="upsertBusinessRelationshipsResponse" type="tns:upsertBusinessRelationshipsResponse"/>
+
+<xs:complexType name="createBusinessRelationships">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="createRequest" nillable="true" type="tns:createRequest"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createRequest">
+<xs:sequence>
+<xs:element name="brType" type="xs:string"/>
+<xs:element maxOccurs="unbounded" name="fields" type="tns:field"/>
+<xs:element name="sid" nillable="true" type="xs:string"/>
+<xs:element name="sidType" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="field">
+<xs:sequence>
+<xs:element name="name" type="xs:string"/>
+<xs:element name="type" type="xs:string"/>
+<xs:element maxOccurs="unbounded" name="values" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createBusinessRelationshipsResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="tns:response"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="response">
+<xs:complexContent>
+<xs:extension base="tns:indexedResponse">
+<xs:sequence>
+<xs:element name="brType" nillable="true" type="xs:string"/>
+<xs:element name="brid" nillable="true" type="xs:string"/>
+<xs:element name="bridType" nillable="true" type="xs:string"/>
+<xs:element name="sid" nillable="true" type="xs:string"/>
+<xs:element name="sidType" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="indexedResponse">
+<xs:complexContent>
+<xs:extension base="tns:simpleResponse">
+<xs:sequence>
+<xs:element name="index" type="xs:int"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="simpleResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="message" type="xs:string"/>
+<xs:element name="status" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="faultBean">
+<xs:sequence>
+<xs:element minOccurs="0" name="message" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBusinessRelationships2">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="request" nillable="true" type="tns:getRequest2"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getRequest2">
+<xs:sequence>
+<xs:element minOccurs="0" name="brId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBusinessRelationships2Response">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="tns:getResponse2"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getResponse2">
+<xs:complexContent>
+<xs:extension base="tns:indexedResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="businessRelationship" type="ns1:businessRelationship"/>
+<xs:element minOccurs="0" name="subtypeKey" type="xs:string"/>
+<xs:element minOccurs="0" name="subtypeName" type="xs:string"/>
+<xs:element minOccurs="0" name="supplierId" type="xs:int"/>
+<xs:element minOccurs="0" name="supplierIdentifier" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="getFields">
+<xs:sequence>
+<xs:element minOccurs="0" name="entityName" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getFieldsResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBusinessRelationships">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="request" nillable="true" type="tns:getRequest"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getRequest">
+<xs:sequence>
+<xs:element minOccurs="0" name="brType" type="xs:string"/>
+<xs:element minOccurs="0" name="brid" type="xs:string"/>
+<xs:element minOccurs="0" name="bridType" type="xs:string"/>
+<xs:element minOccurs="0" name="sid" type="xs:string"/>
+<xs:element minOccurs="0" name="sidType" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBusinessRelationshipsResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ns1:businessRelationship"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="upsertBusinessRelationships">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="upsertRequest" nillable="true" type="tns:upsertRequest"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="upsertRequest">
+<xs:complexContent>
+<xs:extension base="tns:updateRequest">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="updateRequest">
+<xs:sequence>
+<xs:element minOccurs="0" name="bpid" nillable="true" type="xs:int"/>
+<xs:element name="brType" type="xs:string"/>
+<xs:element name="brid" nillable="true" type="xs:string"/>
+<xs:element name="bridType" nillable="true" type="xs:string"/>
+<xs:element maxOccurs="unbounded" name="fields" type="tns:field"/>
+<xs:element minOccurs="0" name="overrideActiveBusinessProcess" type="xs:boolean"/>
+<xs:element name="sid" nillable="true" type="xs:string"/>
+<xs:element name="sidType" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="upsertBusinessRelationshipsResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="tns:response"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findBusinessRelationshipAuditRecords">
+<xs:sequence>
+<xs:element minOccurs="0" name="from" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="to" type="xs:dateTime"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="option" nillable="true" type="ns1:option"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findBusinessRelationshipAuditRecordsResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="tns:brAuditRecord"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="brAuditRecord">
+<xs:complexContent>
+<xs:extension base="tns:baseSupplierAuditRecord">
+<xs:sequence>
+<xs:element minOccurs="0" name="brId" type="xs:long"/>
+<xs:element minOccurs="0" name="subtypeKey" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType abstract="true" name="baseSupplierAuditRecord">
+<xs:complexContent>
+<xs:extension base="tns:universalAuditRecord">
+<xs:sequence>
+<xs:element minOccurs="0" name="locationId" type="xs:long"/>
+<xs:element minOccurs="0" name="locationIdentifier" type="xs:string"/>
+<xs:element minOccurs="0" name="supplierId" type="xs:long"/>
+<xs:element minOccurs="0" name="supplierIdentifier" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType abstract="true" name="universalAuditRecord">
+<xs:sequence>
+<xs:element minOccurs="0" name="flag" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="uaeId" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getSubtypes">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getSubtypesResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="tns:getSubtypeResponse"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getSubtypeResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="description" type="xs:string"/>
+<xs:element minOccurs="0" name="key" type="xs:string"/>
+<xs:element minOccurs="0" name="name" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateBusinessRelationships">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="updateRequest" nillable="true" type="tns:updateRequest"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateBusinessRelationshipsResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="tns:response"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deactivateBusinessRelationships">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="request" nillable="true" type="tns:deactivateRequest"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deactivateRequest">
+<xs:sequence>
+<xs:element name="brType" type="xs:string"/>
+<xs:element name="brid" nillable="true" type="xs:string"/>
+<xs:element name="bridType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="deactivationReason" nillable="true" type="ns3:listItem"/>
+<xs:element name="sid" nillable="true" type="xs:string"/>
+<xs:element name="sidType" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deactivateBusinessRelationshipsResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="tns:response"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

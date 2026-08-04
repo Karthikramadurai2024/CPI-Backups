@@ -1,0 +1,10 @@
+
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8 svn-revision#13980. --><xs:schema xmlns:attr="http://sim.aravo.com/datamodel/2011/08/attributes" xmlns:lst="http://sim.aravo.com/datamodel/2011/08/lists" xmlns:lnk="http://sim.aravo.com/datamodel/2011/08/links" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://sim.aravo.com/datamodel/2013/01/domainobjects">
+
+<xs:complexType name="option">
+<xs:sequence>
+<xs:element name="key" type="xs:string" minOccurs="0"/>
+<xs:element name="value" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

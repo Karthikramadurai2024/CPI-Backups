@@ -1,0 +1,14 @@
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8 svn-revision#13980. --><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://sim.aravo.com/datamodel/2013/01/links">
+
+<xs:complexType name="compositionLink">
+<xs:sequence>
+<xs:element name="linkActive" type="xs:boolean"/>
+<xs:element name="primary" type="xs:boolean"/>
+<xs:element name="secondary" type="xs:boolean"/>
+<xs:element name="targetActive" type="xs:boolean"/>
+<xs:element name="targetExternalId" type="xs:string" minOccurs="0"/>
+<xs:element name="targetInternalId" type="xs:int"/>
+<xs:element name="targetSubtype" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

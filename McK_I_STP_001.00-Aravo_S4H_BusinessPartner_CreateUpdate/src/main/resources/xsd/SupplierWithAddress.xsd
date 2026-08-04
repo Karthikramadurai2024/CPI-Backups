@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Data">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="A_BusinessPartner">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BusinessPartner" />
+              <xs:element name="AcademicTitle" type="xs:string" />
+              <xs:element name="AuthorizationGroup" />
+              <xs:element name="BusinessPartnerCategory" type="xs:unsignedByte" />
+              <xs:element name="BusinessPartnerGrouping" type="xs:string" />
+              <xs:element name="CorrespondenceLanguage" type="xs:string" />
+              <xs:element name="FirstName" type="xs:string" />
+              <xs:element name="FormOfAddress" />
+              <xs:element name="Industry" type="xs:string" />
+              <xs:element name="InternationalLocationNumber1" />
+              <xs:element name="InternationalLocationNumber2" />
+              <xs:element name="IsFemale" type="xs:boolean" />
+              <xs:element name="IsMale" type="xs:boolean" />
+              <xs:element name="IsNaturalPerson" type="xs:string" />
+              <xs:element name="IsSexUnknown" type="xs:boolean" />
+              <xs:element name="GenderCodeName" type="xs:string" />
+              <xs:element name="Language" type="xs:string" />
+              <xs:element name="LastName" type="xs:string" />
+              <xs:element name="LegalForm" />
+              <xs:element name="OrganizationBPName1" />
+              <xs:element name="OrganizationBPName2" />
+              <xs:element name="OrganizationBPName3" />
+              <xs:element name="OrganizationBPName4" />
+              <xs:element name="OrganizationFoundationDate" />
+              <xs:element name="OrganizationLiquidationDate" />
+              <xs:element name="SearchTerm1" />
+              <xs:element name="SearchTerm2" />
+              <xs:element name="AdditionalLastName" type="xs:string" />
+              <xs:element name="BirthDate" />
+              <xs:element name="BusinessPartnerBirthDateStatus" />
+              <xs:element name="BusinessPartnerBirthplaceName" type="xs:string" />
+              <xs:element name="BusinessPartnerDeathDate" />
+              <xs:element name="BusinessPartnerIsBlocked" />
+              <xs:element name="BusinessPartnerType" />
+              <xs:element name="GroupBusinessPartnerName1" type="xs:string" />
+              <xs:element name="GroupBusinessPartnerName2" />
+              <xs:element name="InternationalLocationNumber3" />
+              <xs:element name="MiddleName" />
+              <xs:element name="NameCountry" type="xs:string" />
+              <xs:element name="NameFormat" type="xs:string" />
+              <xs:element name="PersonFullName" />
+              <xs:element name="IsMarkedForArchiving" type="xs:boolean" />
+              <xs:element name="BusinessPartnerIDByExtSystem" type="xs:string" />
+              <xs:element name="TradingPartner" />
+              <xs:element name="to_BusinessPartnerAddress">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="results">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="element">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="BusinessPartner" />
+                                <xs:element name="AddressID" />
+                                <xs:element name="ValidityStartDate" type="xs:string" />
+                                <xs:element name="ValidityEndDate" type="xs:dateTime" />
+                                <xs:element name="AuthorizationGroup" />
+                                <xs:element name="AdditionalStreetPrefixName" />
+                                <xs:element name="AdditionalStreetSuffixName" />
+                                <xs:element name="AddressTimeZone" type="xs:string" />
+                                <xs:element name="CareOfName" />
+                                <xs:element name="CityCode" type="xs:unsignedInt" />
+                                <xs:element name="CityName" type="xs:string" />
+                                <xs:element name="CompanyPostalCode" type="xs:unsignedInt" />
+                                <xs:element name="Country" type="xs:string" />
+                                <xs:element name="County" />
+                                <xs:element name="DeliveryServiceNumber" />
+                                <xs:element name="DeliveryServiceTypeCode" />
+                                <xs:element name="District" type="xs:string" />
+                                <xs:element name="HomeCityName" type="xs:string" />
+                                <xs:element name="HouseNumber" type="xs:unsignedShort" />
+                                <xs:element name="HouseNumberSupplementText" />
+                                <xs:element name="Language" type="xs:string" />
+                                <xs:element name="POBox" />
+                                <xs:element name="POBoxDeviatingCityName" />
+                                <xs:element name="POBoxDeviatingCountry" />
+                                <xs:element name="POBoxDeviatingRegion" />
+                                <xs:element name="POBoxIsWithoutNumber" type="xs:boolean" />
+                                <xs:element name="POBoxLobbyName" />
+                                <xs:element name="POBoxPostalCode" />
+                                <xs:element name="PostalCode" type="xs:unsignedInt" />
+                                <xs:element name="PrfrdCommMediumType" type="xs:string" />
+                                <xs:element name="Region" />
+                                <xs:element name="StreetName" />
+                                <xs:element name="StreetPrefixName" />
+                                <xs:element name="StreetSuffixName" />
+                                <xs:element name="TaxJurisdiction" />
+                                <xs:element name="TransportZone" />
+                                <xs:element name="AddressIDByExternalSystem" />
+                                <xs:element name="CountyCode" />
+                                <xs:element name="TownshipCode" />
+                                <xs:element name="TownshipName" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

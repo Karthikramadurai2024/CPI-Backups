@@ -1,0 +1,6 @@
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8 svn-revision#13980. --><xs:schema xmlns:ns1="http://sim.aravo.com/soapservices/v4_2/SupplierContactService" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://sim.aravo.com/soapservices/v4_2/common">
+
+<xs:import namespace="http://sim.aravo.com/soapservices/v4_2/SupplierContactService" schemaLocation="ContactXSD2.xsd"/>
+
+<xs:element name="Fault" nillable="true" type="ns1:faultBean"/>
+</xs:schema>

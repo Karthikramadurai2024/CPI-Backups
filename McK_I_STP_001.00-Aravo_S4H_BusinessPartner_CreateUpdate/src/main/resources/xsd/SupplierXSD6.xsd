@@ -1,0 +1,43 @@
+
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8 svn-revision#13980. --><xs:schema xmlns:tns="http://sim.aravo.com/datamodel/2012/08/lists" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://sim.aravo.com/datamodel/2012/08/lists">
+
+<xs:complexType name="country">
+<xs:complexContent>
+<xs:extension base="tns:listItem">
+<xs:sequence>
+<xs:element name="isoCode" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="listItem">
+<xs:sequence>
+<xs:element name="code" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="label" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="currency">
+<xs:complexContent>
+<xs:extension base="tns:listItem">
+<xs:sequence>
+<xs:element name="isoCode" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="hierarchyItem">
+<xs:complexContent>
+<xs:extension base="tns:listItem">
+<xs:sequence>
+<xs:element name="codePath" type="xs:string" minOccurs="0"/>
+<xs:element name="idPath" type="xs:string" minOccurs="0"/>
+<xs:element name="labelPath" type="xs:string" nillable="true" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+</xs:schema>

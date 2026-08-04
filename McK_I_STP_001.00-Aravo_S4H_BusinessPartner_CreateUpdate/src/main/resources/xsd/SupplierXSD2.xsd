@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8 svn-revision#13980. --><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://sim.aravo.com/datamodel/2013/01/links" xmlns:ns2="http://sim.aravo.com/datamodel/2013/01/attributes" xmlns:ns3="http://sim.aravo.com/datamodel/2012/08/lists" xmlns:ns4="http://sim.aravo.com/datamodel/2013/01/domainobjects" xmlns:tns="http://sim.aravo.com/soapservices/v4_2/SupplierService" targetNamespace="http://sim.aravo.com/soapservices/v4_2/SupplierService" version="1.0">
+
+<xs:import namespace="http://sim.aravo.com/datamodel/2013/01/links" schemaLocation="SupplierXSD3.xsd"/>
+
+<xs:import namespace="http://sim.aravo.com/datamodel/2013/01/attributes" schemaLocation="SupplierXSD5.xsd"/>
+
+<xs:import namespace="http://sim.aravo.com/datamodel/2012/08/lists" schemaLocation="SupplierXSD6.xsd"/>
+
+<xs:import namespace="http://sim.aravo.com/datamodel/2013/01/domainobjects" schemaLocation="SupplierXSD4.xsd"/>
+
+<xs:element name="createSuppliers" type="tns:createSuppliers"/>
+
+<xs:element name="createSuppliersResponse" type="tns:createSuppliersResponse"/>
+
+<xs:element name="deactivateSuppliers" type="tns:deactivateSuppliers"/>
+
+<xs:element name="deactivateSuppliersResponse" type="tns:deactivateSuppliersResponse"/>
+
+<xs:element name="findSupplierAuditRecords" type="tns:findSupplierAuditRecords"/>
+
+<xs:element name="findSupplierAuditRecordsResponse" type="tns:findSupplierAuditRecordsResponse"/>
+
+<xs:element name="getFields" type="tns:getFields"/>
+
+<xs:element name="getFieldsResponse" type="tns:getFieldsResponse"/>
+
+<xs:element name="getSuppliers" type="tns:getSuppliers"/>
+
+<xs:element name="getSuppliersResponse" type="tns:getSuppliersResponse"/>
+
+<xs:element name="updateSuppliers" type="tns:updateSuppliers"/>
+
+<xs:element name="updateSuppliersResponse" type="tns:updateSuppliersResponse"/>
+
+<xs:element name="upsertSuppliers" type="tns:upsertSuppliers"/>
+
+<xs:element name="upsertSuppliersResponse" type="tns:upsertSuppliersResponse"/>
+
+<xs:complexType name="createSuppliers">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="createRequest" nillable="true" type="tns:createRequest"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createRequest">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" name="fields" type="tns:field"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="field">
+<xs:sequence>
+<xs:element name="name" type="xs:string"/>
+<xs:element name="type" type="xs:string"/>
+<xs:element maxOccurs="unbounded" name="values" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createSuppliersResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="tns:response"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="response">
+<xs:complexContent>
+<xs:extension base="tns:indexedResponse">
+<xs:sequence>
+<xs:element name="primaryLocationId" nillable="true" type="xs:int"/>
+<xs:element name="sid" nillable="true" type="xs:string"/>
+<xs:element name="sidType" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="indexedResponse">
+<xs:complexContent>
+<xs:extension base="tns:simpleResponse">
+<xs:sequence>
+<xs:element name="index" type="xs:int"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="simpleResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="message" type="xs:string"/>
+<xs:element name="status" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="faultBean">
+<xs:sequence>
+<xs:element minOccurs="0" name="message" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getFields">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getFieldsResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateSuppliers">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="updateRequest" nillable="true" type="tns:updateRequest"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateRequest">
+<xs:sequence>
+<xs:element minOccurs="0" name="bpid" nillable="true" type="xs:int"/>
+<xs:element maxOccurs="unbounded" name="fields" type="tns:field"/>
+<xs:element minOccurs="0" name="overrideActiveBusinessProcess" type="xs:boolean"/>
+<xs:element name="sid" nillable="true" type="xs:string"/>
+<xs:element name="sidType" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateSuppliersResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="tns:response"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getSuppliers">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="request" nillable="true" type="tns:getRequest"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getRequest">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="includeEntityTypes" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="sid" type="xs:string"/>
+<xs:element minOccurs="0" name="sidType" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getSuppliersResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="tns:getResponse"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getResponse">
+<xs:complexContent>
+<xs:extension base="tns:indexedResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="supplier" type="tns:supplier"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="supplier">
+<xs:sequence>
+<xs:element minOccurs="0" name="active" type="xs:boolean"/>
+<xs:element minOccurs="0" name="approved" type="xs:boolean"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="banks" nillable="true" type="ns1:compositionLink"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="businessRelationships" nillable="true" type="ns1:compositionLink"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="contacts" nillable="true" type="ns1:compositionLink"/>
+<xs:element minOccurs="0" name="created" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dba" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="extendedAttributes" nillable="true" type="ns2:extendedAttribute"/>
+<xs:element minOccurs="0" name="fedTaxId" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:int"/>
+<xs:element minOccurs="0" name="identifier" type="xs:string"/>
+<xs:element minOccurs="0" name="inactiveReason" type="ns3:listItem"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="locations" nillable="true" type="ns1:compositionLink"/>
+<xs:element minOccurs="0" name="locked" type="xs:boolean"/>
+<xs:element minOccurs="0" name="minorityOwned" type="xs:boolean"/>
+<xs:element minOccurs="0" name="modified" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="name" type="xs:string"/>
+<xs:element minOccurs="0" name="primaryLocationId" type="xs:int"/>
+<xs:element minOccurs="0" name="smallBusiness" type="xs:boolean"/>
+<xs:element minOccurs="0" name="ssn" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="unspsCodes" nillable="true" type="ns3:listItem"/>
+<xs:element minOccurs="0" name="veteranOwned" type="xs:boolean"/>
+<xs:element minOccurs="0" name="womanOwned" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="upsertSuppliers">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="upsertRequest" nillable="true" type="tns:upsertRequest"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="upsertRequest">
+<xs:complexContent>
+<xs:extension base="tns:updateRequest">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="upsertSuppliersResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="tns:response"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findSupplierAuditRecords">
+<xs:sequence>
+<xs:element minOccurs="0" name="from" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="to" type="xs:dateTime"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="option" nillable="true" type="ns4:option"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findSupplierAuditRecordsResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="tns:supplierAuditRecord"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="supplierAuditRecord">
+<xs:complexContent>
+<xs:extension base="tns:baseSupplierAuditRecord">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType abstract="true" name="baseSupplierAuditRecord">
+<xs:complexContent>
+<xs:extension base="tns:universalAuditRecord">
+<xs:sequence>
+<xs:element minOccurs="0" name="locationId" type="xs:long"/>
+<xs:element minOccurs="0" name="locationIdentifier" type="xs:string"/>
+<xs:element minOccurs="0" name="supplierId" type="xs:long"/>
+<xs:element minOccurs="0" name="supplierIdentifier" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType abstract="true" name="universalAuditRecord">
+<xs:sequence>
+<xs:element minOccurs="0" name="flag" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="uaeId" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deactivateSuppliers">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="request" nillable="true" type="tns:deactivateRequest"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deactivateRequest">
+<xs:sequence>
+<xs:element minOccurs="0" name="deactivationReason" nillable="true" type="ns3:listItem"/>
+<xs:element name="sid" nillable="true" type="xs:string"/>
+<xs:element name="sidType" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deactivateSuppliersResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="tns:response"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

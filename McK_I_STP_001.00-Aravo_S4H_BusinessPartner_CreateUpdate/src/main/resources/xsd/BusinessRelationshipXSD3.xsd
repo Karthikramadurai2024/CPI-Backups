@@ -1,0 +1,9 @@
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8 svn-revision#13980. --><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://sim.aravo.com/datamodel/2013/01/links">
+
+<xs:complexType name="link">
+<xs:sequence>
+<xs:element name="targetId" type="xs:int"/>
+<xs:element name="targetType" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
