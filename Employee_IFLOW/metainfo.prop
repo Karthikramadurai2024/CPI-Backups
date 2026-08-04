@@ -1,0 +1,5 @@
+#Store metainfo properties
+#Tue Aug 04 17:37:40 UTC 2026
+description=This is a Integration flow  process of employee to HR
+source=Employee
+target=HR
